@@ -4,12 +4,10 @@ package com.raghib.selenium;
 https://www.youtube.com/watch?v=KtSguNmZ5hA
  */
 
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class HTTPSCertificate {
 	
@@ -30,7 +28,7 @@ public class HTTPSCertificate {
 		//c.merge(ch);
 		
 		// Set the driver path
-		System.setProperty("webdriver.chrome.driver", "C:\\SELENIUM\\browser-driver\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
 		
 		// Open browser with capability
 		WebDriver driver = new ChromeDriver(c);
