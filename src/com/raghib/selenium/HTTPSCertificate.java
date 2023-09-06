@@ -1,43 +1,27 @@
 package com.raghib.selenium;
 
+import java.time.Duration;
+
 /* REFERENCE
 https://www.youtube.com/watch?v=KtSguNmZ5hA
  */
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.CapabilityType;
 
-public class HTTPSCertificate {
+public class HTTPSCertificate extends BaseClass {
+
+	public static WebDriver driver;
+	public static String browserName = "chrome";
+	public static String browserVersion = "116";	
+	public static String url = "https://www.cacert.org/";
 	
 	public static void main(String[] args) throws InterruptedException {
-		
-		// general chrome profile
-		// Create object of DesiredCapabilities class
-		//DesiredCapabilities ch = DesiredCapabilities.chrome();
-		ChromeOptions c = new ChromeOptions();
-		// Set ACCEPT_INSECURE_CERTS  variable to true
-		c.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-		
-		// Set ACCEPT_SSL_CERTS  variable to true
-		//c.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-
-		// Below to your local browser
-		//ChromeOptions c = new ChromeOptions();
-		//c.merge(ch);
-		
-		// Set the driver path
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\Driver\\chromedriver.exe");
-		
-		// Open browser with capability
-		WebDriver driver = new ChromeDriver(c);
-		
-		driver.get("https://www.cacert.org/");
-		
+		// Chrome Browser
+		driver = BaseClass.getDriver(browserName, browserVersion);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().window().maximize();
+		driver.get(url);
 		Thread.sleep(5000);
-		driver.quit();
-
+		BaseClass.quitDriver();
 	}
-
 }
