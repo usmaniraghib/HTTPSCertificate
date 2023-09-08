@@ -1,10 +1,14 @@
 package com.raghib.selenium;
 
-import java.time.Duration;
-
-/* REFERENCE
-https://www.youtube.com/watch?v=KtSguNmZ5hA
+/** REFERENCE
+ * C:\STUDY_DATA\TESTING\New folder_2\1-B_SELANIUM\
+ * 0.1Udemy - Selenium WebDriver with Java -Basics to Advanced+Frameworks\
+ * 14. Miscellaneous topics in Selenium WebDriver
+ * 
+ * https://www.youtube.com/watch?v=KtSguNmZ5hA
  */
+
+import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 
